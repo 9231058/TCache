@@ -5,15 +5,17 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 10:16:12 PM IRST
+ * [] Last Modified : Fri 27 Feb 2015 11:54:34 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "block.h"
+#include "common.h"
 #include "set.h"
 
 struct set *set_new(uint64_t k_way)
@@ -42,6 +44,35 @@ struct set *set_new(uint64_t k_way)
 
 void set_find(struct set *set, uint64_t tag, uint64_t index)
 {
+	int i = 0;
+	struct block *base;
+
+	ulog("In set %lld:\n", index);
+
+	base = set->head;
+	for (i = 0; i < set->k_way; i++) {
+		if (base->valid && base->tag == tag) {
+			ulog("HIT %llu\n", tag);
+			base->access++;
+			return;
+		}
+		base = base->next;
+	}
+
+	ulog("MISS %llu\n", tag);
+
+	base = set->head;
+	for (i = 0; i < set->k_way; i++) {
+		if (!base->valid) {
+			base->tag = tag;
+			base->valid = 1;
+			base->access = 1;
+			return;
+		}
+		base = base->next;
+	}
+
+	ulog("REPLACE %llu\n", tag);
 }
 
 void set_delete(struct set *set)

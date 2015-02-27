@@ -8,7 +8,7 @@
 # =======================================
 
 P=TCache
-OBJ=main.o cache.o block.o set.o
+OBJ=main.o cache.o block.o set.o common.o
 LIB=
 MLIB=
 
@@ -21,13 +21,15 @@ CFLAGS=-Wall -O0 -g -std=gnu11
 LDLIBS=$(MLIB)
 endif
 ASFLAGS=-Wall -O0 -g
+CFLAGS+=-DDEBUG
 
 $(P): $(OBJ)
 	$(CC) -o $(P) $(OBJ) $(LDLIBS)
-main.o:
-cache.o:
-block.o:
-set.o:
+main.o: cache.h
+cache.o: cache.h set.h
+block.o: block.h
+set.o: set.h block.h common.h
+common.o: common.h
 
 .PHONY: clean
 clean:
