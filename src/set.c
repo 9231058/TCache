@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 11:54:34 PM IRST
+ * [] Last Modified : Sat 28 Feb 2015 12:05:29 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "cache_ctl.h"
 #include "block.h"
 #include "common.h"
 #include "set.h"
