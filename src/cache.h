@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 09:41:48 PM IRST
+ * [] Last Modified : Fri 27 Feb 2015 10:11:26 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -41,5 +41,6 @@ struct cache {
 
 struct cache *cache_new(uint64_t k_way, uint64_t sets);
 void cache_find(struct cache *c, uint64_t address);
+void cache_delete(struct cache *c);
 
 #endif
