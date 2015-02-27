@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 10:11:26 PM IRST
+ * [] Last Modified : Fri 27 Feb 2015 11:37:06 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -15,6 +15,8 @@
 #include <stdint.h>
 
 #include "set.h"
+
+enum replacement_policy {FIFO, LRU};
 
 /*
  * cache sturcture:

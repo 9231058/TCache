@@ -7,8 +7,8 @@
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
 
-P=
-OBJ=
+P=TCache
+OBJ=main.o cache.o block.o set.o
 LIB=
 MLIB=
 
@@ -23,6 +23,11 @@ endif
 ASFLAGS=-Wall -O0 -g
 
 $(P): $(OBJ)
+	$(CC) -o $(P) $(OBJ) $(LDLIBS)
+main.o:
+cache.o:
+block.o:
+set.o:
 
 .PHONY: clean
 clean:
