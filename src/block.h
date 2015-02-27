@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 09:01:58 PM IRST
+ * [] Last Modified : Fri 27 Feb 2015 09:39:47 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -17,14 +17,13 @@
 
 /*
  * Cache block structure
- * 127     64      0
- * +-------+-------+
- * | Tag   | index |
- * +-------+-------+
+ * 64      0
+ * +-------+
+ * |  tag  |
+ * +-------+
 */
 struct block {
 	uint64_t tag;
-	uint64_t index;
 	struct block *next;
 };
 

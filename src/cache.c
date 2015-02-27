@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 09:17:16 PM IRST
+ * [] Last Modified : Fri 27 Feb 2015 09:44:27 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -14,38 +14,26 @@
 #include <stdlib.h>
 
 #include "cache.h"
-#include "block.h"
+#include "set.h"
 
 struct cache *cache_new(uint64_t k_way, uint64_t sets)
 {
-	struct cache *new = malloc(sizeof(struct cache));
+	struct cache *new;
+	int i = 0;
 	
-	new->head = block_new(0, 0);
-	new->size = 0;
+	new = malloc(sizeof(struct cache));
 	new->sets = sets;
-	new->k_way = k_way;
-	new->on_replace = NULL;
-	new->on_miss = NULL;
-	new->on_hit = NULL;
+	
+	
+	for (i = 0; i < sets; i++) {
+		struct set *set = set_new(k_way);
+	}
+
 	return new;
 }
 
-void cache_find(struct cache *c,
-		uint64_t tag, uint64_t index)
+void cache_find(struct cache *c, uint64_t address)
 {
 	int i = 0;
 	struct block *b;
-
-	b = c->head;
-	for (i = 0; i < c->size; i++) {
-		if (b->tag == tag && b->index == index) {
-			if (c->on_hit)
-				c->on_hit(tag, index);
-		}
-		if (b->tag != tag && b->index == index) {
-			b->tag = tag;
-			if (c->on_replace)
-				c->on_replace(tag, index);
-		}
-	}
 }

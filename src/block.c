@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 09:04:42 PM IRST
+ * [] Last Modified : Fri 27 Feb 2015 09:39:53 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -15,11 +15,10 @@
 
 #include "block.h"
 
-struct block *block_new(uint64_t tag, uint64_t index)
+struct block *block_new(uint64_t tag, uint64_t set)
 {
 	struct block *new = malloc(sizeof(struct block));
 	new->tag = tag;
-	new->index = index;
 	new->next = NULL;
 	return new;
 }
