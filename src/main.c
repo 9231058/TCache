@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat 28 Feb 2015 12:35:30 AM IRST
+ * [] Last Modified : Sat 28 Feb 2015 12:59:56 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -19,6 +19,7 @@
 int main(int argc, char *argv[])
 {
 	set_replace_function(lru);
+	set_block_size(2);
 
 	struct cache *cache;
 

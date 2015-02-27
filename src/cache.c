@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 09:57:37 PM IRST
+ * [] Last Modified : Sat 28 Feb 2015 12:58:45 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 
 #include "cache.h"
+#include "cache_ctl.h"
 #include "set.h"
 
 struct cache *cache_new(uint64_t k_way, uint64_t sets)
@@ -42,6 +43,8 @@ struct cache *cache_new(uint64_t k_way, uint64_t sets)
 
 void cache_find(struct cache *c, uint64_t address)
 {
+	use_block_size(&address);
+
 	int i = 0;
 	uint64_t set_n = address % c->sets;
 	uint64_t tag = address / c->sets;
