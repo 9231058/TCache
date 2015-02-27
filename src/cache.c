@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat 28 Feb 2015 12:58:45 AM IRST
+ * [] Last Modified : Sat 28 Feb 2015 01:00:58 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -43,6 +43,7 @@ struct cache *cache_new(uint64_t k_way, uint64_t sets)
 
 void cache_find(struct cache *c, uint64_t address)
 {
+	ulog("Address: %lld", address);
 	use_block_size(&address);
 
 	int i = 0;
