@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 09:44:27 PM IRST
+ * [] Last Modified : Fri 27 Feb 2015 09:57:37 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -24,16 +24,30 @@ struct cache *cache_new(uint64_t k_way, uint64_t sets)
 	new = malloc(sizeof(struct cache));
 	new->sets = sets;
 	
-	
-	for (i = 0; i < sets; i++) {
-		struct set *set = set_new(k_way);
-	}
+	struct set *base;
+	struct set *set;
 
+	for (i = 0; i < sets; i++) {
+		if (!i) {
+			base = set_new(k_way);
+			set = base;
+		} else {
+			set->next = set_new(k_way);
+			set = set->next;
+		}
+	}
+	new->head = base;
 	return new;
 }
 
 void cache_find(struct cache *c, uint64_t address)
 {
 	int i = 0;
-	struct block *b;
+	uint64_t set_n = address % c->sets;
+	uint64_t tag = address / c->sets;
+	struct set *set = c->head;
+
+	for (i = 0; i < set_n; i++)
+		set = set->next;
+	set_find(set, tag, set_n);	
 }

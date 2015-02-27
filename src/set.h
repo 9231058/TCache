@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 09:38:32 PM IRST
+ * [] Last Modified : Fri 27 Feb 2015 09:57:11 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -23,7 +23,7 @@ struct set {
 };
 
 struct set *set_new(uint64_t k_way);
-void set_find(uint64_t tag, uint64_t index);
+void set_find(struct set *set, uint64_t tag, uint64_t index);
 void set_delete(struct set *set);
 
 #endif
