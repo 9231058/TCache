@@ -20,10 +20,10 @@ struct cache *cache_new(uint64_t k_way, uint64_t sets)
 {
 	struct cache *new;
 	int i = 0;
-	
+
 	new = malloc(sizeof(struct cache));
 	new->sets = sets;
-	
+
 	struct set *base;
 	struct set *set;
 
@@ -49,5 +49,5 @@ void cache_find(struct cache *c, uint64_t address)
 
 	for (i = 0; i < set_n; i++)
 		set = set->next;
-	set_find(set, tag, set_n);	
+	set_find(set, tag, set_n);
 }

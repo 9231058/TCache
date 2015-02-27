@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 28-02-2015
  *
- * [] Last Modified : Sat 28 Feb 2015 12:18:47 AM IRST
+ * [] Last Modified : Sat 28 Feb 2015 12:42:30 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -17,7 +17,8 @@
 
 static void (*replace)(struct set *set, uint64_t tag, uint64_t index);
 
-void set_replace_function(void (*new_replace)(struct set *set, uint64_t tag, uint64_t index))
+void set_replace_function(void (*new_replace)(struct set *set,
+			uint64_t tag, uint64_t index))
 {
 	replace = new_replace;
 }

@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 28-02-2015
  *
- * [] Last Modified : Sat 28 Feb 2015 12:24:16 AM IRST
+ * [] Last Modified : Sat 28 Feb 2015 12:42:40 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -16,7 +16,8 @@
 
 #include "set.h"
 
-void set_replace_function(void (*new_replace)(struct set *set, uint64_t tag, uint64_t index));
+void set_replace_function(void (*new_replace)(
+			struct set *set, uint64_t tag, uint64_t index));
 void use_replace_function(struct set *set, uint64_t tag, uint64_t index);
 
 #endif

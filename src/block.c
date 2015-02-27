@@ -18,7 +18,7 @@
 struct block *block_new(void)
 {
 	struct block *new = malloc(sizeof(struct block));
-	
+
 	new->valid = 0;
 	new->access = 0;
 	new->next = NULL;
