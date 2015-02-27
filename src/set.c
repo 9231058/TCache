@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat 28 Feb 2015 12:05:29 AM IRST
+ * [] Last Modified : Sat 28 Feb 2015 12:33:44 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -74,6 +74,8 @@ void set_find(struct set *set, uint64_t tag, uint64_t index)
 	}
 
 	ulog("REPLACE %llu\n", tag);
+
+	use_replace_function(set, tag, index);
 }
 
 void set_delete(struct set *set)

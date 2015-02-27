@@ -8,7 +8,7 @@
 # =======================================
 
 P=TCache
-OBJ=main.o cache.o block.o set.o common.o
+OBJ=main.o cache.o block.o set.o cache_ctl.o common.o lru.o
 LIB=
 MLIB=
 
@@ -29,7 +29,9 @@ main.o: cache.h
 cache.o: cache.h set.h
 block.o: block.h
 set.o: set.h block.h common.h
+cache_ctl.o: cache_ctl.h set.h
 common.o: common.h
+lru.o: lru.h set.h
 
 .PHONY: clean
 clean:
