@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 28-02-2015
  *
- * [] Last Modified : Sat 28 Feb 2015 12:32:07 AM IRST
+ * [] Last Modified : Sat Feb 28 12:27:44 2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -16,13 +16,14 @@
 #include "lru.h"
 #include "set.h"
 #include "block.h"
+#include "common.h"
 
 void lru(struct set *set, uint64_t tag, uint64_t index)
 {
 	struct block *base;
 	int i;
-	uint64_t min_val;
-	uint64_t min_inx = -1;
+	uint64_t min_val = -1;
+	uint64_t min_inx;
 
 	base = set->head;
 	for (i = 0; i < set->k_way; i++) {
