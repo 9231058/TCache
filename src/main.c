@@ -5,30 +5,32 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat 28 Feb 2015 12:59:56 AM IRST
+ * [] Last Modified : Sat Feb 28 13:01:23 2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
 #include <stdio.h>
+#include <stdint.h>
 
 #include "lru.h"
+#include "fifo.h"
 #include "cache.h"
 #include "cache_ctl.h"
 
 int main(int argc, char *argv[])
 {
-	set_replace_function(lru);
+	set_replace_function(fifo);
 	set_block_size(2);
 
 	struct cache *cache;
 
-	cache = cache_new(1, 2);
-	cache_find(cache, 0);
-	cache_find(cache, 0);
-	cache_find(cache, 1);
-	cache_find(cache, 0);
-	cache_find(cache, 1);
-	cache_find(cache, 2);
-	cache_find(cache, 2);
+	cache = cache_new(2, 8);
+
+	int i = 0;
+	for (i = 0; i < 25; i++) {
+		uint64_t address;
+		scanf("%llu", &address);
+		cache_find(cache, address);
+	}
 }
