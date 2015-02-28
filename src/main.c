@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat Feb 28 18:56:54 2015
+ * [] Last Modified : Sat Feb 28 20:24:09 2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 	struct cache *cache;
 
-	cache = cache_new(2, 8);
+	cache = cache_new(1, 16);
 
 	int i = 0;
 	for (i = 0; i < 25; i++) {

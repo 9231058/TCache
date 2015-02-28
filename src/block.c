@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat Feb 28 16:51:58 2015
+ * [] Last Modified : Sat Feb 28 20:34:50 2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -33,5 +33,8 @@ void block_delete(struct block *block)
 
 void block_print(struct block *block)
 {
-	printf("%16llx", block->tag);	
+	if (block->valid)
+		printf("%16llx", block->tag);
+	else
+		printf("       --       ");
 }
