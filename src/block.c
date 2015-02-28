@@ -5,13 +5,14 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 10:06:45 PM IRST
+ * [] Last Modified : Sat Feb 28 16:51:58 2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "block.h"
 
@@ -28,4 +29,9 @@ struct block *block_new(void)
 void block_delete(struct block *block)
 {
 	free(block);
+}
+
+void block_print(struct block *block)
+{
+	printf("%16llx", block->tag);	
 }

@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Fri 27 Feb 2015 10:06:59 PM IRST
+ * [] Last Modified : Sat Feb 28 16:47:11 2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -31,5 +31,6 @@ struct block {
 
 struct block *block_new(void);
 void block_delete(struct block *block);
+void block_print(struct block *block);
 
 #endif

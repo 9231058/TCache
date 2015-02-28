@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat 28 Feb 2015 01:01:52 AM IRST
+ * [] Last Modified : Sat Feb 28 16:52:53 2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -76,6 +76,19 @@ void set_find(struct set *set, uint64_t tag, uint64_t index)
 	ulog("REPLACE %llu", tag);
 
 	use_replace_function(set, tag, index);
+}
+
+void set_print(struct set *set)
+{
+	int i;
+	struct block *base;
+
+	base = set->head;
+	for (i = 0; i < set->k_way; i++) {
+		printf("\t");
+		block_print(base);
+		base = base->next;
+	}
 }
 
 void set_delete(struct set *set)
