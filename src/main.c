@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat Feb 28 13:01:23 2015
+ * [] Last Modified : Sat Feb 28 18:56:54 2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -33,4 +33,5 @@ int main(int argc, char *argv[])
 		scanf("%llu", &address);
 		cache_find(cache, address);
 	}
+	cache_print(cache);
 }

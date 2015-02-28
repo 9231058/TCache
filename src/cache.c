@@ -5,13 +5,14 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat Feb 28 10:36:56 2015
+ * [] Last Modified : Sat Feb 28 18:56:27 2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "cache.h"
 #include "common.h"
@@ -55,4 +56,17 @@ void cache_find(struct cache *c, uint64_t address)
 	for (i = 0; i < set_n; i++)
 		set = set->next;
 	set_find(set, tag, set_n);
+}
+
+void cache_print(struct cache *c)
+{
+	uint64_t i;
+	struct set *set = c->head;
+
+	for (i = 0; i < c->sets; i++) {
+		printf("set #%16llx:", i);
+		set_print(set);
+		printf("\n");
+		set = set->next;
+	}
 }
