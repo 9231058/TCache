@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat Feb 28 18:56:27 2015
+ * [] Last Modified : Sun 01 Mar 2015 10:25:50 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -45,7 +45,7 @@ struct cache *cache_new(uint64_t k_way, uint64_t sets)
 
 void cache_find(struct cache *c, uint64_t address)
 {
-	ulog("Address: %lld", address);
+	ulog("Address: %lu", address);
 	use_block_size(&address);
 
 	int i = 0;
@@ -64,7 +64,7 @@ void cache_print(struct cache *c)
 	struct set *set = c->head;
 
 	for (i = 0; i < c->sets; i++) {
-		printf("set #%16llx:", i);
+		printf("set #%16lx:", i);
 		set_print(set);
 		printf("\n");
 		set = set->next;

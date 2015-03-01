@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat Feb 28 16:52:53 2015
+ * [] Last Modified : Sun 01 Mar 2015 10:16:36 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -48,19 +48,17 @@ void set_find(struct set *set, uint64_t tag, uint64_t index)
 	int i = 0;
 	struct block *base;
 
-	ulog("============== In set %lld:", index);
-
 	base = set->head;
 	for (i = 0; i < set->k_way; i++) {
 		if (base->valid && base->tag == tag) {
-			ulog("HIT %llu", tag);
+			use_on_hit_function(tag, index);
 			base->access++;
 			return;
 		}
 		base = base->next;
 	}
 
-	ulog("MISS %llu", tag);
+	use_on_miss_function(tag, index);
 
 	base = set->head;
 	for (i = 0; i < set->k_way; i++) {
@@ -73,8 +71,8 @@ void set_find(struct set *set, uint64_t tag, uint64_t index)
 		base = base->next;
 	}
 
-	ulog("REPLACE %llu", tag);
-
+	use_on_replace_function(tag, index);
+	
 	use_replace_function(set, tag, index);
 }
 
