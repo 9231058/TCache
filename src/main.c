@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sun 01 Mar 2015 10:31:45 AM IRST
+ * [] Last Modified : Sun 08 Mar 2015 08:50:13 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -18,10 +18,10 @@
 #include "cache.h"
 #include "cache_ctl.h"
 
-uint64_t cache_size = 32;
+uint64_t cache_size = 16;
 uint64_t k_way = 1;
-uint64_t block_size = 2;
-uint64_t sets; 
+uint64_t block_size = 4;
+uint64_t sets;
 
 static void on_hit(uint64_t tag, uint64_t index)
 {
