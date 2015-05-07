@@ -5,18 +5,13 @@
  *
  * [] Creation Date : 28-02-2015
  *
- * [] Last Modified : Sat Feb 28 13:00:17 2015
- *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
+/*
+ * Copyright (c) 2015 Parham Alvani.
+*/
 #include <stdint.h>
-#include <stdlib.h>
-
-#include "lru.h"
-#include "set.h"
-#include "block.h"
-#include "common.h"
 
 void lru(struct set *set, uint64_t tag, uint64_t index)
 {

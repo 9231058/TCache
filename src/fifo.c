@@ -5,15 +5,13 @@
  *
  * [] Creation Date : 28-02-2015
  *
- * [] Last Modified : Sat Feb 28 13:00:16 2015
- *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
+/*
+ * Copyright (c) 2015 Parham Alvani.
+*/
 #include <stdint.h>
-
-#include "set.h"
-#include "fifo.h"
 
 
 void fifo(struct set *set, uint64_t tag, uint64_t index)

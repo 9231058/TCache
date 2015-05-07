@@ -5,10 +5,11 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sat Feb 28 18:52:22 2015
- *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
+*/
+/*
+ * Copyright (c) 2015 Parham Alvani.
 */
 #ifndef CACHE_H
 #define CACHE_H

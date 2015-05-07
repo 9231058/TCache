@@ -5,10 +5,11 @@
  *
  * [] Creation Date : 28-02-2015
  *
- * [] Last Modified : Sat 28 Feb 2015 12:26:27 AM IRST
- *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
+*/
+/*
+ * Copyright (c) 2015 Parham Alvani.
 */
 #ifndef LRU_H
 #define LRU_H

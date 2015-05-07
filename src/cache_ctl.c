@@ -3,12 +3,13 @@
  * ========================================
  * [] File Name : cache_ctl.c
  *
- * [] Creation Date : 28-02-2015
- *
- * [] Last Modified : Sun 01 Mar 2015 10:14:14 AM IRST
+ * [] Creation Date : 27-02-2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
+*/
+/*
+ * Copyright (c) 2015 Parham Alvani.
 */
 #include <stdint.h>
 

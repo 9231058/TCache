@@ -5,18 +5,16 @@
  *
  * [] Creation Date : 21-12-2014
  *
- * [] Last Modified : Tue Jan 27 18:55:07 2015
- *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
-
+/*
+ * Copyright (c) 2015 Parham Alvani.
+*/
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
-
-#include "common.h"
 
 void sdie(const char *fmt, ...)
 {

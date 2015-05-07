@@ -5,10 +5,11 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sun 08 Mar 2015 08:50:13 AM IRST
- *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
+*/
+/*
+ * Copyright (c) 2015 Parham Alvani.
 */
 #include <stdio.h>
 #include <stdint.h>
@@ -40,7 +41,7 @@ static void on_replace(uint64_t tag, uint64_t index)
 
 int main(int argc, char *argv[])
 {
-	set_replace_function(fifo);	
+	set_replace_function(fifo);
 	set_on_hit_function(on_hit);
 	set_on_miss_function(on_miss);
 	set_on_replace_function(on_replace);

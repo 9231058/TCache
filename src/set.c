@@ -5,19 +5,17 @@
  *
  * [] Creation Date : 27-02-2015
  *
- * [] Last Modified : Sun 01 Mar 2015 10:16:36 AM IRST
- *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
+*/
+/*
+ * Copyright (c) 2015 Parham Alvani.
 */
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
 
 #include "cache_ctl.h"
-#include "block.h"
-#include "common.h"
-#include "set.h"
 
 struct set *set_new(uint64_t k_way)
 {
@@ -72,7 +70,7 @@ void set_find(struct set *set, uint64_t tag, uint64_t index)
 	}
 
 	use_on_replace_function(tag, index);
-	
+
 	use_replace_function(set, tag, index);
 }
 

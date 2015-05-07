@@ -5,10 +5,11 @@
  *
  * [] Creation Date : 28-02-2015
  *
- * [] Last Modified : Sat Feb 28 12:54:02 2015
- *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
+*/
+/*
+ * Copyright (c) 2015 Parham Alvani.
 */
 #ifndef FIFO_H
 #define FIFO_H

@@ -3,12 +3,13 @@
  * ========================================
  * [] File Name : common.h
  *
- * [] Creation Date : 21-12-2014
- *
- * [] Last Modified : Mon 02 Feb 2015 11:54:35 PM IRST
+ * [] Creation Date : 21-12-2015
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
+*/
+/*
+ * Copyright (c) 2015 Parham Alvani.
 */
 #ifndef COMMON_H
 #define COMMON_H
@@ -18,10 +19,13 @@
 
 void sdie(const char *fmt, ...)
 	__attribute__((format(printf, 1, 2)));
+
 void udie(const char *fmt, ...)
 	__attribute__((format(printf, 1, 2)));
+
 void ulog(const char *fmt, ...)
 	__attribute__((format(printf, 1, 2)));
+
 void slog(const char *fmt, ...)
 	__attribute__((format(printf, 1, 2)));
 
