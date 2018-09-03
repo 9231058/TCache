@@ -1,11 +1,14 @@
 # TCache
+
 ## Introduction
-TCache is simple cache simulator can customized
-with use of function pointers callbacks and it can simulate
-multi layer caching.  
-My personal motivation to write this project was that I want to use OOD in C which is COOL.  
-This project written originally as Homework problem of computer architecture
-course in Amirkabir university.
+
+TCache is a simple cache simulator can generate custom reports
+by means of function pointers callbacks on each cache event and it can simulate
+multi-layer caching.  
+My personal motivation to write this project was that I want to use Object Oriented Design in C which is COOL :sunglasses:.  
+This project is written originally as a solution to one of the homework problems of computer architecture
+course in the Amirkabir University Spring 2015.
+
 ## Function Callbacks
 ### Reporting Function
 ```c
